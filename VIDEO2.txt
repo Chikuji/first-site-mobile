@@ -1,0 +1,251 @@
+Backend
+ 
+Rota /recurso
+
+Metodos HTTP
+    GET: buscar uma informação do Backend
+    POST: criar uma informação no Backend
+    PUT: altera uma informação no Backend
+    DELETE: deleta uma informação no Backend
+
+Para testar os metodos instalar o Insomnia
+
+Insomnia
+cria uma nova request para testar o metodo POST
+http://localhost:3333/users
+
+Tipos de parametros
+    query params: Parametros nomeados enviados na rota apos ? geralmente para filtro/paginação
+    (localhost:3333/users?name=Diego)
+    route params: Parametros utilizados para identificar recursos
+    get(localhost:3333/users/1)
+    request body: corpo da requisição utilizado para criar ou alterar recursos
+    post(localhost:3333/users)
+
+Instalar o nodemon 
+No powershell
+
+ npm install nodemon -D
+
+Agora no script test => start "nodemon index.js"
+ npm start 
+
+------------------
+Diferenças sobre os bancos de dados
+
+SQL: MySQL, SQLite, PostgreSQL, Orackle, Microsoft SQL Server
+
+NoSQL: MongoDB, CouchDB, etc
+
+-----------------
+Driver: SELECT * FROM users
+Query Builder: table('users').select('*').qhere()
+-----------------
+Instalando o Knex.js 
+
+    $ npm install knex --save
+
+# Then add one of the following (adding a --save) flag:
+$ npm install pg
+    $ npm install sqlite3
+$ npm install mysql
+$ npm install mysql2
+$ npm install oracledb
+$ npm install mssql
+
+Criar um arquivo knex na pasta Backend
+
+ npx knex init
+
+knexfile.js
+-----------
+
+Criar uma pasta src na raiz do codigo e colocar o codigo criado
+
+passar o index
+mudar a rota do nodemon para src/nodemon
+criar um arquivo de rotas chamado routs.js 33min
+
+todas as rotas serão escritas nesse arquivo
+e no arquivo de rotas será necessário exportar enviar as rotas
+
+-------------
+no arquivo do knex.js
+
+alterar filename com a rota'./src/database/db.sqlite'
+criar uma pasta no src "database"
+
+ok para fazer a conexão com o banco de dados
+
+---------------35min
+Entidades e funcionalidades para criar o banco de 
+
+1° caso não tenha leyout do frontend
+    Devera pensar nas entradas e saida de dados do frontend
+2° caso ja se tenha o layout disponivel
+    Olhar layout disponível
+
+Entidades 
+    ongs
+    casos (incident)
+Funcionalidades
+    login ong
+    logout ong
+    cadastro ong
+    novo casos
+    deletar casos
+    listar casos especificos ong
+        mobile
+    listar todos os casos
+    entrar em contato com a ong
+-------------39min
+Criar tabelas no banco de dados sql
+
+Knex com a funcionalidade migration 
+    criar tabela e manter histórico do db
+na pasta database criar uma pasta para o migration
+no arquivo knexfile 
+    nova config migration
+
+ npx knex migrate:make create_ongs
+
+ isso cria um arquivo dentro da pasta migration
+ nele usaremos a API no knex de criação de tabelas
+
+ knex.schema.createTable('ongs', function(table){
+    table.string('id').primary();
+    table.string('name').notNullable();
+-------------------
+Apos criar os parametros da tabela iremos criar de fato a tabela
+
+ npx knex migrate:latest
+
+db.sqlite criado na pasta database
+
+---------------------
+Criar outra tabela dos casos ou incidents 
+
+ npx knex migrate:make create_incidents 
+ 
+table.increments(); //Cada linha da coluna um numero sequencial 
+table.foreing('ong_id').references('id').inTable('ongs'); // relacionamento entre a tabela ong
+
+npx knex migrate:latest
+
+Tabela criada com sucesso
+
+npx knex migrate:status  // para ver as migrations que foram feitas
+npx knex migrate:rollback  // para desfazer a ultima migration
+
+-------------------50min
+No arquivo de rotas alterar /users por /ongs
+
+no Insomnia
+    criar uma pasta ongs
+    add a urle
+    preparar o json
+
+----------------- 54min
+criando a chave id da ong com crypto
+
+const crypto = require('crypto'); // pacote que vem com o nodemon
+const id = crypto.randomBytes(4).toString('HEX'); // metodo que gera bytes
+aleatorio e converte em string hexadecimal
+
+------------------55min
+Criando a conexão com o banco
+
+novo arquivo dentro de database chamado connection.js
+
+importar as conexções do arquivo knexfile
+
+--------------57min
+Importar o connection no arquivo de rotas
+
+ const connection = require('./database/connection');
+
+Inserir os dados no banco de dados
+
+ connection('ongs').insert
+
+Transformar a função asincrona
+ ('/ongs', async (request, response)
+Adicionar await 
+ await connection('ongs').insert({
+
+Retornar para a ong cadastrada o id de acesso ao sqlite
+
+----------------1:00min
+Criando outra rota do tipo get
+ routes.get('./ongs', async(request,response)=>{
+
+
+No insomnia cria se uma nova request do tipo get para listar as ongs da rota anterior
+
+---------------1:02min
+Criar uma pasta controllers
+
+Passar todo o metodo de captura de dados para o controllers
+    coneção com o banco 
+    crypto
+
+Nas rotas chamar
+    const OngController = require('./controllers/OngController');
+
+---------------1:06min
+Criar o incidentController
+
+routes.get('/incidents', IncidentController.index); //lista
+routes.post('/incidents', IncidentController.create); //cria
+
+---------------1:12min
+Criar uma rota para deletar um caso
+
+routes.delete('/incidents/:id', IncidentControler.delete);
+
+--------------1:18min
+Criar rota para listar os casos de uma ong especifica 
+
+Novo arquivo controller chamado ProfileController
+
+--------------1:20min
+Criar uma rota de login
+
+-------------1:26min
+Cria uma paginação no backend limitando 5 casos por vez
+
+IncidentControler
+
+const {page = 1} = request.query;
+
+        const incidents = await connection('incidents')
+        .limit(5)
+
+-----------1:28min
+Cria uma soma dos casos por ong
+
+IncidentControler
+ const [count] =await connection('incidents').count()
+
+console.log(count); // mostra no terminal 
+
+Envia para a header o total de casos
+response.header('X-Total-Count', count['count(*)']);
+
+-----------1:31min
+Relacionar dados no Backend utilizando o join dentro da paginação
+
+----------1:33min
+instalando a dependencia cors 
+
+npm install cors
+
+incluir no index.js
+
+
+
+
+
+
+
+

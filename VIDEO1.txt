@@ -1,0 +1,118 @@
+Instalar os frameworks
+-instal node
+-instal npm
+Instalar o visual Studio Code
+-thema dracula
+-thema icon theme
+
+ARQUITETURA DA APLICAÇÃO WEB/MOBILE
+
+Criar uma API - Restfull 30min
+
+Back-end
+
+-Regras de negócios;
+-Conexão banco de dados;
+-Envio de e-mail;
+-Comunicação com webservice;
+-Autenticação do usuário;
+-Criptografia e segurança;
+
+Comunicação do Back-end (Back-end ---> Linguagem JSON)
+-React Front-end web
+-React nateve Front-end mobile
+-Serviços externos
+
+Java scrip object notation
+
+-----------------------------
+via poweshell como administrador
+#ir para a pasta do projeto
+
+cd projetosite
+
+#riar pasta backend
+
+mkdir backend
+
+#dentro da pasta instalar o -npm init -y
+
+-npm init -y
+
+#com isso é criado um arquivo package.json, nele será salvo as dependencias 
+necessárias do projeto 
+
+----------------------------------
+Instalar um "mini" framework chamado express
+no powershell
+
+npm install express
+
+----------------------------------
+executar node index.js na porta 3333 do localhost 
+
+----------------------------------
+
+Entendendo o React
+
+-Abordagem tradicional
+
+Browser
+    Brwoser faz uma requisição para o backend
+Backend (HTML,CSS,JavaScript)
+    Responde todo conteuno em HTML
+
+-Abordagem de SPA
+
+Browser React (HTML, CSS, JavaScript)
+    Browser faz uma requisição para o backend
+Backend node
+    Responde um JASON 
+
+As requisições so tras os dados em JASON e o React monta o frontend
+
+------------------------------------
+Criando um arquivo React 56min
+
+Sai da pasta do backend para instalar o npx
+no powershell
+npx create-react-app frontend
+
+Na pasta do frontend execute 
+
+npm start
+
+-------------------------------------
+Entendendo o React Native
+
+Abordagem tradicional
+
+Objective-C / Swift 
+=> gera um arquivo .ipa para o IOS
+
+Java / Kotlin
+=> gera um arquivo .apk para o Android
+
+Abordagem do React Native
+
+React Native /  JavaScript
+=> gera os arquivos JavaScript Core .ipa e .apk
+
+------------------------------------------
+Utilização do Expo
+Expo é um framework para o react
+
+Sem Expo
+
+React Native => API mapas,câmera,geolocalização 
+=> Precisa instalar as SDK's
+=>.apk /.ipa 
+=> Celular
+
+Com Expo
+
+React Native => apenas o código JavaScrip direto para o Celular
+
+Instala o app Expo que ja vem com as API nativas do Celular
+
+
