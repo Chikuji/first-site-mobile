@@ -1,0 +1,78 @@
+Limpar a estrutura
+Conceitos do React
+    Componentes
+    JSX
+    Propriedades
+    Estado
+    Imutabilidade
+Estrutura das paginas
+    Pagina de login
+    ConfiguraçãoONGs
+    Listagem de casos
+    Cadastro de um novo caso
+    Conectar aplicação à aplicação
+    Enviar projeto ao Git
+
+----------------4min
+Abrir a pasta do frontend
+
+Deletar os arquivos
+    readme
+    app.css 
+    app.test.js
+    index.css 
+    logo.svg 
+    serviceWorker
+    setuptest
+
+Deletar no arquivos index.js
+    import css
+    import serviceWorker
+    comentarios
+    serviceworker.unregister
+
+Deletar no arquivo app.js
+    import logo
+    import css
+    todo corpo html
+
+Deletar na pasta public
+    robot
+    as duas logo
+    manifest
+
+Deletar no arquivo index.html
+    <meta 
+    description
+    logo
+    manifest
+    comentarios até antes do titulo
+
+------10min
+Propriedade ,Estado e imutabilidade
+
+//props sao propriedade de java para injetar no html utilizando {} no h1
+//(props) props.title ou {children} children
+
+//<Header> title ="Semana OmniSteck" /> pode ser assim
+// ou assim <Header> </Header>
+
+Estado
+import React,{useState} from 'react';
+
+------23min
+Estrutura das paginas
+
+
+-------34min 
+Tela de Logon
+npm install react-icons // instalar um pacote de icones para implementar no codigo
+
+-------44min
+Após pagna de logon criada temos que criar outras rotas, para outras paginas
+
+npm install react-router-dom
+
+------46min
+
+Routes
