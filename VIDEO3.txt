@@ -76,3 +76,19 @@ npm install react-router-dom
 ------46min
 
 Routes
+
+------ 1h 14min
+
+ligar o front ao back
+
+instalar o axios
+npm install axios
+
+pasta services
+arquivo api.js
+
+1° importar o api dentro do register
+
+------1h 26min
+
+comunicação com a tela de login
