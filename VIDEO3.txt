@@ -92,3 +92,11 @@ arquivo api.js
 ------1h 26min
 
 comunicação com a tela de login
+
+------1h 34min
+
+conecxão com o profile e banco Ok 
+
+------1h 34min
+
+valor do card em R$ e botão de delet
