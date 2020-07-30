@@ -1,5 +1,18 @@
 Backend
  
+.Node.js e Express
+    rotas e recursos
+    métodos HTTPtipos de parâmetros
+.configurando o Nodemon
+.utilização do Insomnia
+.diferenças entre bando de dados
+.configurando o banco de dados
+.entidades e funcionalidades
+.contrução do beck-end 
+.adicionando o módulo CORS 
+.enviando back-end ao Github
+
+
 Rota /recurso
 
 Metodos HTTP

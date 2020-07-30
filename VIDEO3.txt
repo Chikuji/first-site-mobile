@@ -1,17 +1,19 @@
-Limpar a estrutura
-Conceitos do React
+Frontend
+
+.limpar a estrutura
+.conceitos do React
     Componentes
     JSX
     Propriedades
     Estado
     Imutabilidade
-Estrutura das paginas
+.estrutura das paginas
     Pagina de login
     ConfiguraçãoONGs
     Listagem de casos
     Cadastro de um novo caso
     Conectar aplicação à aplicação
-    Enviar projeto ao Git
+.enviar projeto ao Git
 
 ----------------4min
 Abrir a pasta do frontend

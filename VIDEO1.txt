@@ -1,3 +1,16 @@
+Overview geral
+
+.apresentar a aplicação
+.configurar o ambiente de desenvolvimento
+    NodeJS e npm
+    Visual Studio Code
+.entender sobre back-end e front-end
+.criar o projeto com Node.js
+.entender sobre React e SPA
+.criar projeto com ReactJS
+.entender sobre React Native e Expo
+
+
 Instalar os frameworks
 -instal node
 -instal npm

@@ -1,0 +1,29 @@
+Aplicação Mobile
+
+.instalando o Expo
+.criando projeto React Native
+.executando o projeto   
+    no celular
+    emuladores
+    expo snack
+.diferenças para o ReactJS
+    elementos HTML
+    semantica
+    estilização
+        flexbox
+        propriedades
+        herança de estilos
+        estilização própria
+.estrutura de pastas
+.icone e Splash Screen
+.configuração navegação
+.pagina de casos
+.detalhe do casos.abrindo Whatsapp e E-mail
+.conexão com a API 
+.enviando para o Github
+
+-------- 4min
+instalando o expo 
+
+npm -v
+npm install -g expo-cli #  -g significa instalação global na maquina
