@@ -27,3 +27,16 @@ instalando o expo
 
 npm -v
 npm install -g expo-cli #  -g significa instalação global na maquina
+
+
+
+
+-------- 24min
+https://docs.expo.io/
+https://github.com/react-navigation/react-navigation
+https://reactnavigation.org/
+
+npm install @react-navigation/native
+
+-------- 27min 20seg
+Inicio das rotas
