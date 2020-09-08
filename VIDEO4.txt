@@ -39,4 +39,5 @@ https://reactnavigation.org/
 npm install @react-navigation/native
 
 -------- 27min 20seg
+
 Inicio das rotas

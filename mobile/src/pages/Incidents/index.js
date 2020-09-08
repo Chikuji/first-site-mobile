@@ -1,8 +1,9 @@
 import React from 'react';
-import { View} from 'react-nateve';
+
+import Routes from './src/routes';
 
 export default function Incidents(){
     return(
-        <View/>
+        <Routes/>
     );
 }
